@@ -34,6 +34,7 @@ Follow these steps to set up the project:
 4. Set up the SQLite database:
 
     ```bash
+    python manage.py makemigrations
     python manage.py migrate
     ```
 
