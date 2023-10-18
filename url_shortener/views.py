@@ -17,7 +17,7 @@ def shorten_url(request):
         # Validate our URL
         if not validators.url(url):
             return JsonResponse({'error': 'Invalid URL'}, status=400)
-        short_url = make_short_url(url) # Define your logic for generating short URLs
+        short_url = make_short_url(url)
         ShortenedURL.objects.create(original_url=url, short_url=short_url)
         return JsonResponse({'shortUrl': short_url})
     return render(request, 'index.html')
@@ -25,8 +25,8 @@ def shorten_url(request):
 def make_short_url(url):
     hash_object = hashlib.md5(url.encode())
     hex_dig = hash_object.hexdigest()
-    short_url = hex_dig[:8]  # You can adjust the length of the short URL as needed
-    return short_url #host will be added automatically
+    short_url = hex_dig[:8]  # set length of short url
+    return short_url # host will be added automatically
 
 def get_original_url(request, short_url):
     print(request)
