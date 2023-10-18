@@ -47,19 +47,21 @@ Follow these steps to set up the project:
 
 2. Access the URL shortener service in your web browser at `http://localhost:3000/shorten/`.
 
-3. Use the Django admin interface for managing the database at `http://localhost:3000/admin/`. You can create a superuser using the following command:
+![Alt text](/static/pics/homescreen.png)
 
-    ```bash
-    python manage.py createsuperuser
-    ```
+3. Access the Django REST service at `http://localhost:3000/api/shortenedurls/` to interact with the URL shortener data.
 
-4. Access the Django REST service at `http://localhost:3000/api/shortenedurls/` to interact with the URL shortener data.
+![Alt text](/static/pics/djangoRest.png/)
 
 ## API Endpoints
 
 - `POST /shorten`: Use this endpoint to create a shortened URL. Provide the original URL in the request body.
 
+![Alt text](/static/pics/successfulShorten.png)
+
 - `<short_url>`: Access the shortened URL to be redirected to the original URL.
+
+![Alt text](/static/pics/redirectToLongUrl.png)
 
 - `GET /api/shortenedurls/`: Retrieve a list of all shortened URLs in the database.
 
