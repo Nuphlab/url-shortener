@@ -1,0 +1,13 @@
+
+<div class="container">
+    <form action="{% url 'shorten' %}" method="post">
+        {% csrf_token %}
+        <div class="mb-3 row">
+            <label for="url" class="form-label">Enter URL To Shorten:</label>
+            <input type="text" class="form-control" id="url" placeholder="example: http://mj-stop-it-get-some-help.com" name="url">
+        </div>
+        <div class="mb-3">
+            <button type="submit" class="btn btn-primary">Shorten URL</button>
+        </div>
+    </form>
+</div>

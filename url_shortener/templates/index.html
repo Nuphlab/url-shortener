@@ -1,0 +1,25 @@
+{% load static %}
+{% load bootstrap5 %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>URL Shortener App</title>
+    {% bootstrap_css %}
+    <link href="{% static 'css/styles.css' %}" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <h1>Welcome to El Shortener</h1>
+    </header>
+
+    {% include './components/homepage.html' %}
+
+    <footer class="footer">
+        <p>&copy; 2023 URL Shortener</p>
+    </footer>
+    {% bootstrap_javascript %}
+</body>
+</body>
+</html>
