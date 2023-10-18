@@ -31,6 +31,12 @@ Follow these steps to set up the project:
     pip install -r requirements.txt
     ```
 
+4. Set up the SQLite database:
+
+    ```bash
+    python manage.py migrate
+    ```
+
 ## Usage
 
 1. Start the Django server:
@@ -39,13 +45,23 @@ Follow these steps to set up the project:
     python manage.py runserver 0.0.0.0:3000
     ```
 
-2. Access the URL shortener service in your web browser at `http://localhost:3000`.
+2. Access the URL shortener service in your web browser at `http://localhost:3000/shorten/`.
+
+3. Use the Django admin interface for managing the database at `http://localhost:3000/admin/`. You can create a superuser using the following command:
+
+    ```bash
+    python manage.py createsuperuser
+    ```
+
+4. Access the Django REST service at `http://localhost:3000/api/shortenedurls/` to interact with the URL shortener data.
 
 ## API Endpoints
 
 - `POST /shorten`: Use this endpoint to create a shortened URL. Provide the original URL in the request body.
 
 - `<short_url>`: Access the shortened URL to be redirected to the original URL.
+
+- `GET /api/shortenedurls/`: Retrieve a list of all shortened URLs in the database.
 
 ## Requirements
 
